@@ -31,7 +31,8 @@ impl Configuration {
         if self.uuid.is_none() {
             let mut uuid = [0; 16];
             rng.fill_bytes(&mut uuid);
-            self.uuid.replace(Uuid(uuid));
+            self.uuid
+                .replace(Uuid(*uuid::Builder::from_bytes(uuid).build().as_bytes()));
             changed = true;
         }
 
@@ -365,6 +366,7 @@ impl<S: Storage> ConfigurationManager<S> {
         }
     }
 
+    #[allow(unused_must_use)]
     pub(crate) async fn node_reset(&self) -> ! {
         defmt::info!("reset");
         self.store(&Configuration::default()).await;

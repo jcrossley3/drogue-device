@@ -223,8 +223,10 @@ impl Message for NodeResetMessage {
         }
     }
 
-
-    fn emit_parameters<const N: usize>(&self, xmit: &mut Vec<u8, N>) -> Result<(), InsufficientBuffer> {
+    fn emit_parameters<const N: usize>(
+        &self,
+        _xmit: &mut Vec<u8, N>,
+    ) -> Result<(), InsufficientBuffer> {
         Ok(())
     }
 }

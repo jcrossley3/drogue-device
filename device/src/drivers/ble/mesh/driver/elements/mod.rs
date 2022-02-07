@@ -7,7 +7,7 @@ use crate::drivers::ble::mesh::composition::ElementsHandler;
 use crate::drivers::ble::mesh::configuration_manager::PrimaryElementModels;
 use crate::drivers::ble::mesh::driver::DeviceError;
 use crate::drivers::ble::mesh::model::foundation::configuration::{
-    BeaconMessage, ConfigurationMessage, ConfigurationServer,
+    ConfigurationMessage, ConfigurationServer,
 };
 use crate::drivers::ble::mesh::model::Model;
 use crate::drivers::ble::mesh::pdu::access::AccessMessage;
